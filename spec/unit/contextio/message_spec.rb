@@ -35,4 +35,19 @@ describe ContextIO::Message do
       subject.set_flags({:seen => true})
     end
   end
+
+  describe "#thread" do
+    before do
+      allow(api).to receive(:request).and_return({'email_message_ids' => [], 'person_info' => {}, 'messages' => []})
+    end
+
+    it "gets to the thread method api" do
+      expect(api).to receive(:request).with(
+        :get,
+        'resource/url/thread'
+      )
+
+      subject.thread
+    end
+  end
 end

@@ -1,7 +1,10 @@
 # Changes
 
-## Unreleased
+## 1.8.0
 
+* loosened faraday dependency - Michael Bernstein
+* Moved `ContextIO::Message#thread` from private to public, and also changed the
+  method to return json data instead of creating a `ContextIO::Thread` object. - Eric Pinzur
 * Add 'references' to lazy_attributes in message.rb - Dylan Stamat
 * Add remove_folder method to the Message class in message.rb. - Brandon Chow
 * Hotfix the FolderCollection class's create method in folder_collection.rb : the optional delim parameter causes the api call to break. - Brandon Chow

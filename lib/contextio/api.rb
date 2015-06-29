@@ -213,7 +213,7 @@ class ContextIO
     # @return [String, Nil] If it can, it will return a human-readable
     #   error-describing String. Otherwise, nil.
     def determine_best_error_message(parsed_body)
-      return unless parsed_body.respond_to?(:[])
+      return unless parsed_body.respond_to?(:[]) && parsed_body.is_a?(Hash)
 
       if parsed_body['type'] == 'error'
         return parsed_body['value']
